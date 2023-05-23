@@ -53,7 +53,7 @@ internal class Program
         // Mongo Instrumentation config 
         //https:github.com/jbogard/MongoDB.Driver.Core.Extensions.DiagnosticSources
 
-        var mongoUrl = MongoUrl.Create("mongodb+srv://cinthia:admin123@cluster0.gt0eyjy.mongodb.net/");
+        var mongoUrl = MongoUrl.Create("mongodb+srv://<user>:<password>@cluster0.gt0eyjy.mongodb.net/");
         var clientSettings = MongoClientSettings.FromUrl(mongoUrl);
         var options = new InstrumentationOptions { CaptureCommandText = true };
         clientSettings.ClusterConfigurator = cb => cb.Subscribe(new DiagnosticsActivityEventSubscriber(options));
